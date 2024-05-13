@@ -875,11 +875,11 @@ func (d *Driver) Cleanup() error {
 }
 
 // LookupAdditionalLayer looks up additional layer store by the specified
-// digest and ref and returns an object representing that layer.
+// TOC digest and ref and returns an object representing that layer.
 // This API is experimental and can be changed without bumping the major version number.
 // TODO: to remove the comment once it's no longer experimental.
-func (d *Driver) LookupAdditionalLayer(dgst digest.Digest, ref string) (graphdriver.AdditionalLayer, error) {
-	l, err := d.getAdditionalLayerPath(dgst, ref)
+func (d *Driver) LookupAdditionalLayer(tocDigest digest.Digest, ref string) (graphdriver.AdditionalLayer, error) {
+	l, err := d.getAdditionalLayerPath(tocDigest, ref)
 	if err != nil {
 		return nil, err
 	}
